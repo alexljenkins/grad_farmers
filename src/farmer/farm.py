@@ -5,7 +5,10 @@ count total number of legs of all the animals on the farm
 class Animal:
     def __init__(self, name:str, legs:int) -> None:
         self.name = name
-        self.number_of_legs = legs
+        if legs < 0:
+            self.number_of_legs = 0
+        else:
+            self.number_of_legs = legs
         
     def __repr__(self):
         return f"the animal is {self.name}, and it has {self.number_of_legs}"
@@ -23,6 +26,7 @@ class Farm:
             self.animals[animal_type.index(animal.name)]['count'] += number
         else:
             self.animals.append({'animal': animal, 'count':number})
+        print(self.animals)
     
     def get_total_legs(self):
         return sum([animal['count'] * animal['animal'].number_of_legs for animal in self.animals])
