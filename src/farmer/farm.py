@@ -16,7 +16,6 @@ class Animal:
 class Farm:
     def __init__(self):
         self.animals = list() # {'animal': Animal, 'count':4}
-    
     def add_animal(self, animal:Animal, number):
         animal_type = []
         # creates list of animal names
