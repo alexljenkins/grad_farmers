@@ -1,0 +1,11 @@
+version: "2"
+services:
+  farmer:
+    build: .
+    image: jenkins/farmer
+    container_name: farmer
+    ports:
+      - "5555:5555"
+    volumes:
+      - .:/opt/working
+    entrypoint: python api.py
